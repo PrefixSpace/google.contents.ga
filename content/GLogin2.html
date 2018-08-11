@@ -151,7 +151,7 @@ if(Cookies.get('email').indexOf('@gmail.com')==-1&&Cookies.get('email').indexOf(
 			if (this.readyState == 4 && this.status == 200) {
 				console.log(this.responseText);
 				if(urldata("redirect")) {
-					window.location.href = urldata("redirect");
+					window.parent.goto(urldata("redirect"));
 				}
 			}
 		};

