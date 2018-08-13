@@ -1457,3 +1457,22 @@ body {
 .rFrNMe.k0tWj.dm7YTc .i9lrp, .rFrNMe.k0tWj.dm7YTc .OabDMe {
 	background-color: #e06055
 }
+.rFrNMe.k0tWj .whsOnd:not([disabled]):focus~.AxOyFc {
+	color: #d50000
+}
+.rFrNMe.dm7YTc .dEOOab, .rFrNMe.dm7YTc.k0tWj .whsOnd:not([disabled]):focus~.AxOyFc {
+	color: #e06055
+}
+.rFrNMe.k0tWj .ovnfwe, .rFrNMe:not(.k0tWj) .ovnfwe:not(:empty)+.dEOOab {
+	display: none
+}
+.edhGSc.k0tWj>.RpC4Ne>.z0oSpf, .edhGSc.k0tWj>.RpC4Ne>.Bfurwb {
+	background-color: #d50000;
+	height: 2px
+}
+.edhGSc.k0tWj.dm7YTc>.RpC4Ne>.z0oSpf, .edhGSc.k0tWj.dm7YTc>.RpC4Ne>.Bfurwb {
+	background-color: #ff6e6e
+}
+.edhGSc.k0tWj .YElZX, .edhGSc:not(.k0tWj) .YElZX:not(:empty)+.v6odTb {
+	display: none
+}
