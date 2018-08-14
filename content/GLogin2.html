@@ -143,6 +143,7 @@ if(Cookies.get('email').indexOf('@gmail.com')==-1&&Cookies.get('email').indexOf(
 	document.getElementById("pw").addEventListener("keyup", function(event) {
 		event.preventDefault();
 			if (event.keyCode === 13) {
+				event.preventDefault();
 				document.getElementById("passwordNext").click();
 			}
 	});
