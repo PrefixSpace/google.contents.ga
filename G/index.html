@@ -6,7 +6,7 @@
 	<title>G</title>
 </head>
 <body onclick="changeicon()">
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" id="img" height="480" width="480" style="position: fixed; pointer-events: none; cursor: pointer;"> 
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" id="img" height="480" width="480" style="position: fixed; cursor: pointer;"> 
 <script>
 	var iconsrc = ["https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg","https://upload.wikimedia.org/wikipedia/commons/7/74/Googledrive_logo.svg", "https://upload.wikimedia.org/wikipedia/commons/d/d7/Google_Translate_logo.svg", "https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"];
 	var a,b,c=0,d,i,icon=0;
@@ -23,7 +23,7 @@
 		img.style.top = (window.innerHeight-img.height)/2+"px";
 	},30);
 	function changeicon() {
-		icon++;
+		if(icon>=4) {icon=0;} else {icon++;}
 		img.src=iconsrc[icon];
 	}
 </script>
