@@ -5,10 +5,11 @@
   <link rel="shortcut icon" href="../favicon.ico">
 	<title>G</title>
 </head>
-<body>
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" id="img" height="480" width="480" style="position: fixed; pointer-events: none; cursor: pointer;" onclick="open()"> 
+<body onclick="changeicon()">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" id="img" height="480" width="480" style="position: fixed; pointer-events: none; cursor: pointer;"> 
 <script>
-	var a,b,c=0,d,i;
+	var iconsrc = ["https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg","https://upload.wikimedia.org/wikipedia/commons/7/74/Googledrive_logo.svg", "https://upload.wikimedia.org/wikipedia/commons/d/d7/Google_Translate_logo.svg", "https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg"];
+	var a,b,c=0,d,i,icon=0;
 	var img = document.getElementById("img");
 	var interval = setInterval(function() {
 		d = 480 - img.height;
@@ -21,11 +22,9 @@
 		img.style.left = (window.innerWidth-img.width)/2+"px";
 		img.style.top = (window.innerHeight-img.height)/2+"px";
 	},30);
-	function open() {
-		clearInterval(interval);
-		for(;img.width<window.innerWidth||img.height<window.innerHeight;) {
-			setTimeout(function(){ img.width++; img.height++;}, 20);
-		}
+	function changeicon() {
+		icon++;
+		img.src=iconsrc[icon];
 	}
 </script>
 </body>
