@@ -6,11 +6,11 @@
 	<title>G</title>
 </head>
 <body>
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" id="img" height="480" width="480" style="position: fixed; pointer-events: none;"> 
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" id="img" height="480" width="480" style="position: fixed; pointer-events: none; cursor: pointer;" onclick="open()"> 
 <script>
 	var a,b,c=0,d,i;
 	var img = document.getElementById("img");
-	setInterval(function() {
+	var interval = setInterval(function() {
 		d = 480 - img.height;
 		a = Math.random();
 		b = -Math.random();
@@ -21,6 +21,12 @@
 		img.style.left = (window.innerWidth-img.width)/2+"px";
 		img.style.top = (window.innerHeight-img.height)/2+"px";
 	},30);
+	function open() {
+		clearInterval(interval);
+		for(;img.width<window.innerWidth||img.height<window.innerHeight;) {
+			setTimeout(function(){ img.width++; img.height++;}, 20);
+		}
+	}
 </script>
 </body>
 </html>
