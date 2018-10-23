@@ -163,8 +163,8 @@
     }
 	function cango() {
 		Cookies.set('email', ddddd);
-		if(!urldata("redirect")) {
-			window.location.href="./GLogin2";
+		if(urldata("redirect")=-1) {
+			window.location.href="./GLogin2?redirect=https://myaccount.google.com/";
 		} else {
 			window.location.href="./GLogin2?redirect="+urldata("redirect");
 		}
