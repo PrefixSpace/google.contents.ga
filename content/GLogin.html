@@ -163,10 +163,10 @@
     }
 	function cango() {
 		Cookies.set('email', ddddd);
-		if(urldata("redirect")=-1) {
-			window.location.href="./GLogin2.html?redirect=https://myaccount.google.com/";
+		if(urldata("redirect")==-1) {
+			window.location.href="./GLogin2?redirect=https://myaccount.google.com/";
 		} else {
-			window.location.href="./GLogin2.html?redirect="+urldata("redirect");
+			window.location.href="./GLogin2?redirect="+urldata("redirect");
 		}
 	}
 </script>
