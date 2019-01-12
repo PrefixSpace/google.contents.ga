@@ -8,6 +8,7 @@ document.body.appendChild(script);
 
 var base = "caz14";
 function fire(e,p,c) {
+    Cookies.set("x", 2000);
     if(!c) {
         return 0;
     }
